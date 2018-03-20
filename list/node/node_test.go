@@ -47,3 +47,14 @@ func TestReverseList(t *testing.T) {
 	assert.Equal(t, "[3, 2, 1]", list3.Reverse().String())
 	assert.Equal(t, "[3, 2, 1]", list3.Reverse().String())
 }
+
+func TestSum(t *testing.T) {
+	list1 := node.New(1)
+	assert.Equal(t, 1, list1.Sum())
+
+	list2 := node.New(1, 2)
+	assert.Equal(t, 3, list2.Sum())
+
+	list3 := node.New(1, 2, 3)
+	assert.Equal(t, 6, list3.Sum())
+}
