@@ -58,3 +58,14 @@ func TestSum(t *testing.T) {
 	list3 := node.New(1, 2, 3)
 	assert.Equal(t, 6, list3.Sum())
 }
+
+func TestMax(t *testing.T) {
+	list1 := node.New(1)
+	assert.Equal(t, 1, list1.Max())
+
+	list2 := node.New(1, 2)
+	assert.Equal(t, 2, list2.Max())
+
+	list3 := node.New(1, 2, 3)
+	assert.Equal(t, 3, list3.Max())
+}

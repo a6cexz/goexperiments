@@ -35,6 +35,17 @@ func sumAcc(list *Node, acc int) int {
 	return sumAcc(list.next, list.value+acc)
 }
 
+func maxAcc(list *Node, max int) int {
+	if list == nil {
+		return max
+	}
+	if list.GetValue() > max {
+		return maxAcc(list.next, list.GetValue())
+	} else {
+		return maxAcc(list.next, max)
+	}
+}
+
 // New creates new list from the given elements
 func New(data ...int) *Node {
 	var h *Node
@@ -87,4 +98,9 @@ func (l *Node) Reverse() *Node {
 // Sum calculates sum of all elements in the list
 func (l *Node) Sum() int {
 	return sumAcc(l, 0)
+}
+
+// Max find maximum value in the list
+func (l *Node) Max() int {
+	return maxAcc(l, l.GetValue())
 }
