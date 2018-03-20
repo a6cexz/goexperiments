@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/zdishou/goexpirements/list/node"
+	"github.com/zdishou/goexperiments/list/node"
 )
 
 func TestNew(t *testing.T) {
