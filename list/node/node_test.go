@@ -24,6 +24,17 @@ func TestGetTail(t *testing.T) {
 	assert.Equal(t, "[2, 3]", list3.GetTail().String())
 }
 
+func TestGetValue(t *testing.T) {
+	list1 := node.New(1)
+	assert.Equal(t, 1, list1.GetValue())
+
+	list2 := node.New(1, 2)
+	assert.Equal(t, 2, list2.GetTail().GetValue())
+
+	list3 := node.New(1, 2, 3)
+	assert.Equal(t, 3, list3.GetTail().GetTail().GetValue())
+}
+
 func TestReverseList(t *testing.T) {
 	list1 := node.New(1)
 	assert.Equal(t, "[1]", list1.Reverse().String())
