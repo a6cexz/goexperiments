@@ -1,6 +1,6 @@
 package main
 
-import "github.com/zdishou/goexpirements/list/node"
+import "github.com/a6cexz/goexperiments/list/node"
 
 func main() {
 	list := node.New(1, 2, 3)
