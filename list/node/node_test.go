@@ -3,8 +3,8 @@ package node_test
 import (
 	"testing"
 
+	"github.com/a6cexz/goexperiments/list/node"
 	"github.com/stretchr/testify/assert"
-	"github.com/zdishou/goexperiments/list/node"
 )
 
 func TestNew(t *testing.T) {
@@ -82,4 +82,14 @@ func TestMax(t *testing.T) {
 
 	list3 := node.New(1, 2, 3)
 	assert.Equal(t, 3, list3.Max())
+}
+
+func TestMinNegative(t *testing.T) {
+	list1 := node.New(-10, -20, 0, 100, -100)
+	assert.Equal(t, -100, list1.Min())
+}
+
+func TestMaxNegative(t *testing.T) {
+	list1 := node.New(-10, -20, 0, 100, -100)
+	assert.Equal(t, 100, list1.Max())
 }
